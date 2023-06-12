@@ -26,7 +26,7 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 	echo "	| |  | (_)     | ___ \     | | | |             	 |     |     |		   "
 	echo "	| |  | |_ _ __ | |_/ /_   _| |_| |_ ___  _ __  	 |_____|_____|		   "
 	echo "	| |/\| | | '_ \| ___ \ | | | __| __/ _ \| '_ \ 	 |     |     |		   "
-	echo "	\  /\  / | | | | |_/ / |_| | |_| || (_) | | | |	 |_____|_____|			   "
+	echo "	\  /\  / | | | | |_/ / |_| | |_| || (_) | | | |	 |_____|_____|		   "
 	echo "	 \/  \/|_|_| |_\____/ \__,_|\__|\__\___/|_| |_|				   "
 	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 	echo "1)Set user properties		2)Create a user"
@@ -63,11 +63,11 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 	pause
 
 :userProp
-	echo Setting password never expires
+	echo Setting password rules...
 	wmic UserAccount set PasswordExpires=True
 	wmic UserAccount set PasswordChangeable=True
 	wmic UserAccount set PasswordRequired=True
-
+	echo Don't forget to set password expiry timers.
 	pause
 	goto :menu
 
@@ -159,7 +159,7 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 	rem Enables firewall
 	netsh advfirewall set allprofiles state on
 	netsh advfirewall reset
-	
+	echo If for some reason, the firewall turns itself off, use Google
 	pause
 	goto :menu
 	
@@ -204,8 +204,10 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 	pause
 	goto :menu
 :UAC
-
-	exit
+	echo You need to go to the Control Panel / GodMode and do this manually.
+	
+	pause
+	goto :menu
 
 :remDesk
 	rem Ask for remote desktop
