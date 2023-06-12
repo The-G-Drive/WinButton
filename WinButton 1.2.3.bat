@@ -15,7 +15,7 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 	if /I {%answer%}=={y} (
 		goto :menu
 	) else (
-		echo Go and answer them.
+		echo Go and answer them. This program can change files or settings that can change the answers of your questions.
 		pause
 		exit
 	)
