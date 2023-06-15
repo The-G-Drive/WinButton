@@ -1,0 +1,8 @@
+Password set:
+  setlocal EnableExtensions
+	  for /F "tokens=2* delims==" %%G in ('
+		  wmic UserAccount where "status='ok'" get name 2^>NUL
+	  ') do for %%g in (%%~G) do (
+	  	net user %%~g "Cyb3rPatr10tS"
+	  	)
+	
