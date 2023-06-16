@@ -53,22 +53,22 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 :menu
 	cls
 	echo "	 _    _ _       _____       _   _		      _________   	   "
-	echo "	| |  | (_)     | ___ \     | | | |                   |    |    |	   "
+	echo "	| |  | (_)     | ___ \     | | | |      v1.3.8       |    |    |	   "
 	echo "	| |  | |_ _ __ | |_/ /_   _| |_| |_ ___  _ __  	     |    |    | 	   "
 	echo "	| |/\| | | '_ \| ___ \ | | | __| __/ _ \| '_ \ 	     |----+----|	   "
 	echo "	\  /\  | | | | | |_/ / |_| | |_| || (_) | | | |	     |    |    | 	   "
-	echo "	 \/  \/|_|_| |_\____/ \__,_|\__|\__\___/|_| |_| v1.3 |____|____|	   "
+	echo "	 \/  \/|_|_| |_\____/ \__,_|\__|\__\___/|_| |_|      |____|____|	   "
 	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	echo "1)Set user properties		2)Create a user"
-	echo "3)Disable a user		4)Change all passwords"
-	echo "5)Disable guest/admin		6)Set password policy
-	echo "7)Set lockout policy		8)Enable Firewall"
-	echo "9)Search for media files 	10)Disable services
-	echo "11)User Account Control 	12)Remote Desktop Config
-	echo "13)Enable auto update		14)Security options"
-	echo "15)Audit the machine		16)Edit groups"
-	echo "17)GodMode (NEW!) 		18)Coming Soon..."
-	echo "69)Exit			70)Reboot"
+	echo [01 - Set User Properties] 	[02 - Create-a-User]
+	echo [03 - Disable-a-User]		[04 - Change all Passwords]
+	echo [05 - Disable Guest/Admin]		[06 - Set Password Policy]
+	echo [07 - Set Lockout Policy]		[08 - Enable Firewall"]
+	echo [09 - Search for Media Files] 	[10 - Disable services]
+	echo [11 - User Account Control]	[12 - Remote Desktop Config]
+	echo [13 - Enable Auto-Update]		[14 - Security Options]
+	echo [15 - Audit the Machine]		[16 - Edit Groups]
+	echo [17 - GodMode] 			[18 - The Win Button]
+	echo [69 - Exit]			[70 - Reboot]
 	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 	set /p answer=Please choose an option: 
 		if "%answer%"=="1" goto :userProp
@@ -91,7 +91,9 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 		if "%answer%"=="18" goto :gottem
 		rem turn on screensaver
 		rem password complexity
-		if "%answer%"=="69" exit
+		if "%answer%"=="69" 
+			echo yeet
+			exit
 		if "%answer%"=="70" shutdown /r
 	pause
 
@@ -426,6 +428,20 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 	goto :menu
 
 :gottem
-	start "" https://www.youtube.com/watch?v=d1YBv2mWll0
+	set /p answer=Are you sure you want to proceed? [y/n]
+		if /I {%answer%}=={y} (
+			start "" https://www.youtube.com/watch?v=d1YBv2mWll0
+			exit
+		) 
+		if /I {%answer%}=={n} (
+			echo Then Why did you hit the button?
+			pause
+			goto :menu
+		) else (
+			echo Pardon?
+			pause
+			goto :gottem
+		)
+	
 
 endlocal
