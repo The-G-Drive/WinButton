@@ -61,12 +61,12 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 	echo [01 - Set User Properties] 	[02 - Create-a-User]
 	echo [03 - Disable-a-User]		[04 - Change all Passwords]
-	echo [05 - Disable Guest/Admin]		[06 - Set Password Policy]
-	echo [07 - Set Lockout Policy]		[08 - Enable Firewall"]
+	echo [05 - Disable Guest/Admin]	[06 - Set Password Policy]
+	echo [07 - Set Lockout Policy]	[08 - Enable Firewall"]
 	echo [09 - Search for Media Files] 	[10 - Disable services]
 	echo [11 - User Account Control]	[12 - Remote Desktop Config]
-	echo [13 - Enable Auto-Update]		[14 - Security Options]
-	echo [15 - Audit the Machine]		[16 - Edit Groups]
+	echo [13 - Enable Auto-Update]	[14 - Security Options]
+	echo [15 - Audit the Machine]	[16 - Edit Groups]
 	echo [17 - GodMode] 			[18 - The Win Button]
 	echo [69 - Exit]			[70 - Reboot]
 	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
