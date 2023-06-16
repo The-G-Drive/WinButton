@@ -92,7 +92,6 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 		rem turn on screensaver
 		rem password complexity
 		if "%answer%"=="69" 
-			echo yeet
 			exit
 		if "%answer%"=="70" shutdown /r
 	pause
@@ -199,6 +198,7 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 	
 :badFiles
 	echo Still working this one out, sorry ('-')
+	echo You ned to search for them manually (TwT)
 	pause
 	goto :menu
 
@@ -242,7 +242,7 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 :UAC
 	echo enabling User Account Control...
 	powershell -Command "& {New-ItemProperty -Path HKLM:Software\Microsoft\Windows\CurrentVersion\policies\system -Name EnableLUA -PropertyType DWord -Value 1}"
-	echo Make sure to manually go into Control Panel/GodMode and manually change the UAC level to max.
+	echo Make sure to manually go into Control Panel/GodMode and manually change the UAC level to max, fhen reboot for the changes to take effect.
 	pause
 	goto :menu
 
@@ -423,7 +423,7 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 
 :godmode
 	md "%UserProfile%"\Desktop\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
-	echo Check your Desktop folder.
+	echo If it doesn't show up, right-click and refresh your Desktop.
 	pause
 	goto :menu
 
@@ -434,7 +434,7 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 			exit
 		) 
 		if /I {%answer%}=={n} (
-			echo Then Why did you hit the button?
+			echo Then why did you hit the button?
 			pause
 			goto :menu
 		) else (
